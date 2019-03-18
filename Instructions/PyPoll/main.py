@@ -1,6 +1,6 @@
 # Your task is to create a Python script that analyzes the votes and calculates each of the following:
 
-# The total number of votes cast[]
+# The total number of votes cast[x]
 # A complete list of candidates who received votes[]
 # The percentage of votes each candidate won[]
 # The total number of votes each candidate won[]
@@ -16,8 +16,9 @@ import csv
 csvpath = os.path.join("Homework","python-challenge","Instructions","PyPoll","Resources", "election_data.csv")
 
 #Create lists and variables
+votes = []
 votetotal = 0
-candidates = {}
+candidates = []
 votepercent_candidate = 0
 votetotal_candidate = 0
 
@@ -26,13 +27,19 @@ votetotal_candidate = 0
 # county does not matter
 # unique values in column 2 are candidates
 
-
-print(csvpath)
+#print(csvpath)
 
 # Open the CSV
-# with open(csvpath, newline="") as csvfile:
+with open(csvpath, newline="") as csvfile:
 #     # skip header row
 #     # Voter ID,County,Candidate [0,1,2]
-#     next(csvfile)
-#     csvreader = csv.reader(csvfile, delimiter=",")
-   # for row in csvreader:
+     next(csvfile)
+     csvreader = csv.reader(csvfile, delimiter=",")
+     for row in csvreader:
+         votes.append(row)
+         #candidates.append(row[2])
+votetotal = len(votes) 
+
+
+# Print results to text file
+print(str(votetotal) + " total votes ", file=open("electionoutput.txt", "a"))
