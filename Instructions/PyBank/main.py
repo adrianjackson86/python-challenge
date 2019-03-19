@@ -43,7 +43,7 @@ print("greatest decrease " + str(min(profit_loss))) #print month as well
 
 
 # Print results to text file
-print(str(monthtotal) + " months", file=open("output.txt", "a"))
+print(str(monthtotal) + " months", file=open("finaloutput.txt", "a"))
 print(str(nettotal) + " total dollars", file=open("finaloutput.txt", "a"))
 print("average change is " + str(avg_change), file=open("finaloutput.txt", "a"))
 print("greatest increase " + str(max(profit_loss)), file=open("finaloutput.txt", "a"))
