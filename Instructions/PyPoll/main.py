@@ -72,6 +72,10 @@ li_percent = format((li/votetotal)*100,'.3f')
 correy_percent = format((correy/votetotal)*100,'.3f')
 tooley_percent = format((tooley/votetotal)*100,'.3f')
 
+# winner = [khan,li,correy,tooley]
+# winner = max[winner]
+
+
 # Print results to text file
 print("Election Results\n-----------------------------", file=open("electionoutput.txt", "a"))
 print("Total Votes: " + str(votetotal) + "\n-----------------------------", file=open("electionoutput.txt", "a"))
